@@ -12,5 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('posts/index');
 });
+
+Route::get('/', 'PostController@index');
+Route::get('/radios/{station_name}', 'PostController@show');
+Route::get('/radios/{station_name}/{title}', 'PostController@showProgram');
